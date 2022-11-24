@@ -14,7 +14,9 @@ Make sure Node.js is install on your computer, otherwise please visit https://no
 
 Download the entire repository as a zip file and unzip, then open up Terminal and locate the downloaded folder.
 
-### Set up
+### Setup
+
+> Import required dependencies
 ```bash
 npm i axios
 npm i cheerio
@@ -22,7 +24,7 @@ npm i express
 npm i ws
 ```
 
-### Run by using 
+### Run Server
 ```bash
 node server.js
 ```
