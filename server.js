@@ -3,7 +3,6 @@ const PORT = 8000
 const axios = require("axios")
 const cheerio = require("cheerio")
 const express = require("express")
-const download = require('image-downloader');
 
 const app = express()
 
@@ -14,15 +13,6 @@ var server = http.createServer(app);
 var ws = new WebSocket.Server({server:server, path:"/"})
 
 var URL;
-
-// var fs = require('fs');
-
-//const ws = new WebSocket('ws://localhost:8000')
-//const server = new WebSocket.Server({ port: PORT })
-
-//const { Server } = require("socket.io");
-//const io = new Server(server);
-//const ws = new WebSocket.Server({ server })
 
 // static files
 app.use(express.static('public'))
@@ -37,7 +27,6 @@ app.get('/', function(req,res) {
 ws.on('connection', socket => {
   socket.on('message', message => {
      getImage(message, 'male');
-     //console.log(URL);
      socket.send(`${URL}`);
   })
 })
@@ -52,7 +41,7 @@ function getImage(country, gender){
 
   axios(myUrl)
     .then(response => {
-        const html = response.data
+        const html = response.data 
         const $ = cheerio.load(html)
         var images = []
         var totalNum = 0
@@ -72,21 +61,6 @@ function getImage(country, gender){
         })
 
         URL = images[Math.floor(Math.random()*totalNum)].img;
-        /*console.log(URL);
-
-        option = {
-          url: URL,
-          dest: '/Users/Roy/Desktop/SFU/My\ VSCode/Web\ Crawler/public/img/result.jpeg'
-        };
-        
-
-        download.image(option).then(({ filename }) => {
-          console.log('Saved to', filename); 
-        }).catch((err) => console.error(err));*/
-
-        //return URL;
 
     }).catch(err => console.log(err))
 }
-
-//app.listen(PORT, () => console.log('server running on PORT ' + PORT))
