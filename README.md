@@ -1,5 +1,3 @@
-# Birth-Simulator-v2
-
 # Birth Simulator
 
 If you were to reborn, which country would you be born at?
