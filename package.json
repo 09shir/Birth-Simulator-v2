@@ -1,5 +1,5 @@
 {
-  "name": "birth-simulator-v2-main",
+  "name": "birth-simulator-v2",
   "version": "1.0.0",
   "description": "![FOTP](./public/img/doge.ico)",
   "main": "server.js",
