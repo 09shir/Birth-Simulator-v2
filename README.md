@@ -16,7 +16,6 @@ Download the entire repository as a zip file and unzip, then open up Terminal an
 
 ### Set up
 ```bash
-npm init
 npm i axios
 npm i cheerio
 npm i express
