@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900);
+
+html {
+  overflow: hidden;
+}
+
+h1,
+p,
+a{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+  font-size: 1.5em;
+  padding: 10px 0;
+  font-weight: 800;
+}
+
+p {
+  font-size: 1.1em;
+  font-weight: 100;
+  letter-spacing: 5px;
+}
+
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+.header {
+  width: 100%;
+  padding:5px 0px;
+  text-align: center;
+  background: #4c5270;
+  color: white;
+  height: 50px;
+  position: fixed;
+  top: 0;
+}
+
+.footer {
+    text-align: center;
+    background: #42A5F5;
+    color: white;
+    height: 50px;
+	  width: 100%;
+    position: absolute;
+    bottom: 0;        
+}
+
+
+
+.btn-bgstroke {
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 300;
+  margin-top: 30px; 
+}
+
+.btn-bgstroke:hover {
+  background-color: red;
+  color: #4c5270;
+}
+
+.marker {
+    background-image: url('mapbox-icon.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup {
+    max-width: 200px;
+  }
+  
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .button {
+    text-align: center;
+    margin: auto;
+    padding-right: 100px;
+    height: 100px;
+	  width: 100%;
+    position: absolute;
+    bottom: 0;   
+  }
+
+  .buttonImage {
+    top: 0;
+    text-align: center;
+    margin: auto;
+    padding-top: 5px;
+    padding-left: 1020px;
+    height: 100px;
+	  width: 100%;
+    position: absolute; 
+  }

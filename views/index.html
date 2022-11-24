@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Birth Simulator</title>
+        <link rel="icon" type="image/png" sizes="200x200" href="img/doge.ico"> <!-- Links the favicon!-->
+
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        
+        <!-- Import jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous">
+        </script>
+
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+        <style>
+            body { margin: 0; padding: 0; }
+            #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        </style>
+
+        <link rel="stylesheet" href="css/style.css"> <!-- Links my stylesheet-->
+        <script src="js/script.js"></script> <!-- Links my java script file-->
+    </head>
+    <body>
+        
+        <div id="map"></div>
+        <script>
+
+            localStorage.setItem('URL', '(Please wait a bit during image generation)');
+
+	        mapboxgl.accessToken = 'pk.eyJ1IjoicnNhMTgwIiwiYSI6ImNsYTN0NmMybTA3ZzEzeHJuZnZxdnF1Z2gifQ.ixfIa3hbREFZ60vlIbzGcA';
+            const map = new mapboxgl.Map({
+                container: 'map',
+                // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [0, 10],
+                zoom: 1.26, // 0.6
+                projection: 'naturalEarth' // starting projection
+            });
+
+            const el = document.createElement('div');
+            el.className = 'marker';
+            marker = new mapboxgl.Marker(el)
+        </script>
+
+        <section class="header">
+            <h1>Birth Simulator</h1>
+        </section>
+
+        <footer class="footer">
+            <h1 id="displayCountry"> You were born in: </h1>
+        </footer>
+
+        <div class="mx-sm-5 button">
+            <button type="submit" class="btn btn-primary" onclick="deleteMarker(marker); marker = nextBirth(); show(); sendCountryName(localStorage.getItem('countryName'));">Reborn</button>
+        </div>
+
+        <div class="mx-sm-5 buttonImage">
+            <button id="hideORshow" type="submit2" class="btn btn-primary" data-bs-toggle="modal2" data-bs-target="#exampleModal2" onclick="return confirm('Open this in new tab: ' + localStorage.getItem('URL'))">
+                Generate Image
+            </button>
+        </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="displayBornIn">This is you if you were born in here</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h6 id="modal_body"> Open this in new tab: </h6>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="displayURL()">Generate Image</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        
+    <script>
+        hide();
+        
+    </script>
+
+    <script type="text/javascript">
+        $("#submit2").click(function () {
+            if (localStorage.getItem('URL') != undefined){
+                var str = "Open URL on new tab: " + localStorage.getItem('URL');
+            }
+            else{
+                var str = "Error, image failed to load";
+            }
+            $("#modal_body").html(str);
+        });
+        
+    </script>
+
+    </body>
+</html>
+
