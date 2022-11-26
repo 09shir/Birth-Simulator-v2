@@ -16,7 +16,7 @@ Download the entire repository as a zip file and unzip, then open up Terminal an
 
 ### Setup
 
-> Import required dependencies
+> Install required dependencies
 ```bash
 npm i axios
 npm i cheerio
