@@ -18,10 +18,7 @@ Download the entire repository as a zip file and unzip, then open up Terminal an
 
 > Install required dependencies
 ```bash
-npm i axios
-npm i cheerio
-npm i express
-npm i ws
+npm i axios cheerio express ws
 ```
 
 ### Run Server
