@@ -8,6 +8,8 @@ The project calculates chances of giving birth at each country using countries' 
 
 The v2 update comes in with a facial image generator, so that when the user is born in country A, it can simulate what the user would look like if he/she were born in country A by generating a corresponding facial image.
 
+![FOTP](./public/img/WebsitePreview.png)
+
 ## To Run
 
 Make sure Node.js is install on your computer, otherwise please visit https://nodejs.org/en/download/ for download. 
